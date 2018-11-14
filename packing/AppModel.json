@@ -1,0 +1,35 @@
+{
+    "title": "Packing ",
+    "visibility": "All",
+    "expiry": 0,
+    "isAnonymous": false,
+    "isResponseAppended": true,
+    "isLocationRequested": false,
+    "questions": [
+        {
+            "title": "Packing Number",
+            "type": "Number"
+        },
+        {
+            "title": "Picking Number",
+            "type": "Number"
+        },
+       
+        {
+            "title": "Name",
+            "type": "Text"
+        },
+        {
+            "title": "Phone",
+            "type": "Text"
+        },
+        {
+          "title": "Location",
+          "type": "Location"
+        },
+        {
+          "title": "Response Time",
+          "type": "DateTime"
+        }
+    ]
+}
