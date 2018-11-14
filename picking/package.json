@@ -1,4 +1,12 @@
 {
+  "id": "com.tambuzi.bouquet.details",
+  "schemaVersion": 1,
+  "version": "7",
+  "minorVersion": 1,
+  "providerName": "NanyukiAF",
+  "displayName": "Picking",
+  "description": "add picking details",
+  "icon": "picking.png",
   "id": "com.nanyukitimhack.pickings",
   "schemaVersion": 1,
   "version": "1",

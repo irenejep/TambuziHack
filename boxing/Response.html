@@ -210,12 +210,8 @@
             var navigationBar = new KASClient.UI.KASFormPageNavigationBar();
             navigationBar.backAsset = "close.png";
 
-            var mainText = KASClient.UI.getElement("div", {
-                "font-size": "12pt",
-                "color": "#32495f",
-                "max-width": "300pt",
-                "font-weight": "500"
-            });
+            var mainText = KASClient.UI.getElement("div");
+            mainText.className = "mainText";
             mainText.innerText = _strings["strMiniAppTitle"];
 
             navigationBar.title = mainText.outerHTML;
@@ -269,12 +265,16 @@
                 if(fieldTitle== "Box Number"){
                     fieldInputType="number";
                 }
+                if(fieldTitle == "Bouquet Number"){
+                    fieldInputType = "number";
+                }
                 //Create the field
                 if((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time"))
                 {
                     if(x == (totalQuestions - 1)){
                         var fieldDiv = KASClient.UI.getElement("div", {
                                 "border-bottom": "none"
+
                             }
                         );
                     }
@@ -679,7 +679,7 @@
                 let fieldInputType = "";
                 let compressedTitle = fieldTitle.replace(/\s+/g, '');
                 //validation of input fields
-                if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time")) {
+                if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time") && (fieldTitle != "Box Number") && (fieldTitle != "Shipping Track Number")) {
                     if (fieldType == 0) {
                     }
 

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "title": "boxing",
     "visibility": "All",
     "expiry": 0,
@@ -33,3 +34,39 @@
         }
     ]
 }
+=======
+  "title": "Boxing Details",
+  "visibility": "All",
+  "expiry": 0,
+  "isAnonymous": false,
+  "isResponseAppended": true,
+  "isLocationRequested": false,
+  "questions": [
+    {
+      "title": "Box Number",
+      "type": "Text"
+    },
+    {
+      "title": "Shipping Track Number",
+      "type": "Text"
+    },
+
+    {
+      "title": "Name",
+      "type": "Text"
+    },
+    {
+      "title": "Phone",
+      "type": "Text"
+    },
+    {
+      "title": "Location",
+      "type": "Location"
+    },
+    {
+      "title": "Response Time",
+      "type": "DateTime"
+    }
+  ]
+}
+>>>>>>> 7b93c3e7a9d2f95079243ab58681fc7340fe7f06

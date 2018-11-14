@@ -208,12 +208,8 @@
             var navigationBar = new KASClient.UI.KASFormPageNavigationBar();
             navigationBar.backAsset = "close.png";
 
-            var mainText = KASClient.UI.getElement("div", {
-                "font-size": "12pt",
-                "color": "#32495f",
-                "max-width": "300pt",
-                "font-weight": "500"
-            });
+            var mainText = KASClient.UI.getElement("div");
+            mainText.className = "mainText";
             mainText.innerText = _strings["strMiniAppTitle"];
 
             navigationBar.title = mainText.outerHTML;

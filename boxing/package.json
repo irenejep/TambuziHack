@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "id": "com.TimHacks.Boxing.",
   "schemaVersion": 1,
   "version": "1",
@@ -6,6 +7,15 @@
   "providerName": "TimHack",
   "displayName": "Boxing ",
   "description": "Boxing ",
+=======
+  "id": "com.nanyukiCustomerssam.Boxing.d",
+  "schemaVersion": 1,
+  "version": "4",
+  "minorVersion": 2,
+  "providerName": "NanyukiAF",
+  "displayName": "Boxing Details",
+  "description": "Boxing Details",
+>>>>>>> 7b93c3e7a9d2f95079243ab58681fc7340fe7f06
   "icon": "boxing.png",
   "appModel": "AppModel.json",
   "dials": {
@@ -23,8 +33,13 @@
       "showLikes": false,
       "showComments": false,
       "labelResponseSending": "Submitting your details",
+<<<<<<< HEAD
       "labelResponded": "boxing provided",
       "labelResponseFailed": "Livestock alert submission failed",
+=======
+      "labelResponded": "Boxing details provided",
+      "labelResponseFailed": "Boxing details submission failed",
+>>>>>>> 7b93c3e7a9d2f95079243ab58681fc7340fe7f06
       "isResponseEditable": false
     },
     "ResponseResultsView": {
