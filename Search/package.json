@@ -1,0 +1,35 @@
+{
+  "id": "com.nanyukiCustomerssam.Searchh.Flower",
+  "schemaVersion": 1,
+  "version": "1",
+  "minorVersion": 5,
+  "providerName": "NanyukiAF",
+  "displayName": "Bouquet Search",
+  "description": "Bouquet Search",
+  "icon": "Search Flower.jpg",
+  "appModel": "AppModel.json",
+  "dials": {
+    "isLocalised": false,
+    "isPinned": false
+  },
+  "actionScope": "Group",
+  "views": {
+    "CreationView": {
+      "sourceLocation": "Response.html",
+      "showNativeToolbar": false
+    },
+    "ChatCanvasCardView": {
+      "showReceipts": false,
+      "showLikes": false,
+      "showComments": false,
+      "labelResponseSending": "Submitting your details",
+      "labelResponded": "Shipment details provided",
+      "labelResponseFailed": "Shipment details submission failed",
+      "isResponseEditable": false
+    },
+    "ResponseResultsView": {
+      "sourceLocation": "ResponseSummary.html",
+      "showNativeToolbar": false
+    }
+  }
+}

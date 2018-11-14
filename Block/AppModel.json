@@ -1,0 +1,35 @@
+{
+  "title": "Block Details",
+  "visibility": "All",
+  "expiry": 0,
+  "isAnonymous": false,
+  "isResponseAppended": true,
+  "isLocationRequested": false,
+  "questions": [
+    {
+      "title": "Block Number",
+      "type": "Text"
+    },
+    {
+      "title": "Employee Number",
+      "type": "Text"
+    },
+
+    {
+      "title": "Name",
+      "type": "Text"
+    },
+    {
+      "title": "Phone",
+      "type": "Text"
+    },
+    {
+      "title": "Location",
+      "type": "Location"
+    },
+    {
+      "title": "Response Time",
+      "type": "DateTime"
+    }
+  ]
+}

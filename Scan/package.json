@@ -1,0 +1,35 @@
+{
+  "id": "com.nanyukicustomers.checkDetails",
+  "schemaVersion": 1,
+  "version": "11",
+  "minorVersion": 20,
+  "providerName": "NanyukiAF",
+  "displayName": "Details Check",
+  "description": "Enter box number to view information",
+  "icon": "scan.png",
+  "appModel": "AppModel.json",
+  "dials": {
+    "isLocalised": false,
+    "isPinned": false
+  },
+  "actionScope": "Group",
+  "views": {
+    "CreationView": {
+      "sourceLocation": "Response.html",
+      "showNativeToolbar": false
+    },
+    "ChatCanvasCardView": {
+      "showReceipts": false,
+      "showLikes": false,
+      "showComments": false,
+      "labelResponseSending": "Scanning QR code",
+      "labelResponded": "QR Code information provided",
+      "labelResponseFailed": "Livestock alert submission failed",
+      "isResponseEditable": false
+    },
+    "ResponseResultsView": {
+      "sourceLocation": "ResponseSummary.html",
+      "showNativeToolbar": false
+    }
+  }
+}

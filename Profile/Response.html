@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="themeKaizala.css" />
 </head>
 
-<body onload="onPageLoad()">
+<body  bgcolor="#E6E6FA" onload="onPageLoad()" >
     <!--The description section-->
     <div id="header">
     </div>
@@ -210,12 +210,8 @@
             var navigationBar = new KASClient.UI.KASFormPageNavigationBar();
             navigationBar.backAsset = "close.png";
 
-            var mainText = KASClient.UI.getElement("div", {
-                "font-size": "12pt",
-                "color": "#32495f",
-                "max-width": "300pt",
-                "font-weight": "500"
-            });
+            var mainText = KASClient.UI.getElement("div");
+            mainText.className = "mainText";
             mainText.innerText = _strings["strMiniAppTitle"];
 
             navigationBar.title = mainText.outerHTML;
@@ -668,7 +664,7 @@
                 let fieldInputType = "";
                 let compressedTitle = fieldTitle.replace(/\s+/g, '');
                 
-                if((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time")&& (fieldTitle != "My Photo"))
+                if((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Preferred Name") && (fieldTitle != "My Information") && (fieldTitle != "Location") && (fieldTitle != "Response Time")&& (fieldTitle != "My Photo") && (fieldTitle != "Employee Number"))
                 {
                     if(fieldType == 0){
 
