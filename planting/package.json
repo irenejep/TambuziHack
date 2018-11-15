@@ -1,8 +1,8 @@
 {
-  "id": "com.nanyukicustomers.planting.details",
+  "id": "timhack.planting.details",
   "schemaVersion": 1,
   "version": "8",
-  "minorVersion": 5,
+  "minorVersion": 14,
   "providerName": "NanyukiAF",
   "displayName": "Planting Details",
   "description": "Planting Details",

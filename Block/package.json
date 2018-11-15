@@ -1,8 +1,8 @@
 {
-  "id": "com.nanyukiCustomerssam.Block.detail",
+  "id": "com.nanyukiCustomerstim.Block.detail",
   "schemaVersion": 1,
   "version": "1",
-  "minorVersion": 4,
+  "minorVersion": 8,
   "providerName": "NanyukiAF",
   "displayName": "Block Details",
   "description": "Block Details",

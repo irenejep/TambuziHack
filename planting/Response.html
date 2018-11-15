@@ -141,7 +141,7 @@
                 let fieldInputType = "";
                 let compressedTitle = fieldTitle.replace(/\s+/g, '');
 
-                if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time")) {
+                if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time") && (fieldTitle != "Flower Type")) {
                     if (fieldType == 0) {
                         // let option = fieldDescription["options"][selectedOptions[compressedTitle]];
                         questionToAnswerMap[x] = selectedOptions[compressedTitle];
@@ -263,7 +263,7 @@
                     fieldInputType = "number";
                 }
                 //Create the field
-                if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time")) {
+                if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Flower Type") && (fieldTitle != "Location")&& (fieldTitle != "Response Time")) {
                     if (x == (totalQuestions - 1)) {
                         var fieldDiv = KASClient.UI.getElement("div", {
                             "border-bottom": "none"
@@ -362,6 +362,86 @@
                     KASClient.UI.addElement(fieldDiv, pageOneDiv);
                 }
             }
+            //create flower type select
+            var fieldDiv = KASClient.UI.getElement("div");
+            
+			fieldDiv.className = "section";
+
+			var fieldTitleDiv = KASClient.UI.getElement("div");
+			fieldTitleDiv.className = "question-title";
+			fieldTitleDiv.innerText = _strings["Flower Type"];
+			
+			var fieldInput = KASClient.UI.getElement("select");
+			fieldInput.type = "option";
+			fieldInput.className = "comment-input";
+			fieldInput.id = "flowerType";
+
+			//dependancy for IOS for just adding padding
+			if (KASClient.getPlatform() == KASClient.Platform.iOS) {
+				KASClient.UI.addCSS(fieldInput, {
+					"padding-left": "13pt"
+				});
+			}
+			
+			fieldInput.placeholder = _strings["strTapToEnter"];
+			
+			fieldInput.addEventListener("input", function (event) {
+				invalidateFooter();
+			});
+			
+			fieldInput.addEventListener("blur", function (event) {
+				getEmployeeNumber();
+			});
+			
+			var autoCompleteDiv = KASClient.UI.getElement("div");
+			autoCompleteDiv.className = "autocomplete";
+
+			KASClient.UI.addElement(fieldTitleDiv, fieldDiv);
+			KASClient.UI.addElement(fieldInput, autoCompleteDiv);
+            KASClient.UI.addElement(autoCompleteDiv, fieldDiv);
+			
+			// Add items to page 1
+            KASClient.UI.addElement(fieldDiv, pageOneDiv);
+            
+            var xhttp = new XMLHttpRequest();
+            var url = "https://ecommerce-caroline.azurewebsites.net//saveFlowerTypes";
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    try {
+                        flowertypedata = JSON.parse(this.responseText);
+                    } catch (e) {
+                        flowertypedata = this.responseText;
+                    }
+                    
+                    getFlowerType(flowertypedata);
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+        function getFlowerType(flowertypedata){
+            
+            let totalflowertypedata = flowertypedata.length;
+            let flowers = [];
+            let flowersSelect ="";
+			
+			for(r = 0; r < totalflowertypedata; r++){
+				let totalflowers = flowers.length;
+                let check = false;
+				for(t = 0; t < totalflowers; t++){
+					let currentFlowerType = flowers[t];
+					if(currentFlowerType === flowertypedata[r].flower_types_name ){
+						check = true;
+                    }
+				}
+				if(check === false){
+                    flowers.push(flowertypedata[r].flowertypedata);
+                    flowersSelect += '<option value="'+flowertypedata[r].id+'">'+flowertypedata[r].flower_types_name+'</option>';
+				}
+			}
+			//console.log(regions);
+            // autocomplete(document.getElementById("Region"), regions);
+            document.getElementById("flowerType").innerHTML = flowersSelect;
         }
 
         function inflateDetailsView() {
@@ -660,7 +740,7 @@
                     let fieldInputType = "";
                     let compressedTitle = fieldTitle.replace(/\s+/g, '');
 
-                    if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time")) {
+                    if ((fieldTitle != "Name") && (fieldTitle != "Phone") && (fieldTitle != "Location") && (fieldTitle != "Response Time") && (fieldTitle != "Flower Type")) {
                         if (fieldType == 0) {
 
                         } else {
